@@ -1,0 +1,11 @@
+### test1
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+"title": "Start with Why",
+"author": "Simon Sinek"
+}
+
+### test2
+GET http://localhost:8080/books

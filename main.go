@@ -1,19 +1,21 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-
+	"cwm.wiki/web/controller"
+	"cwm.wiki/web/models"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"data": "hello world"})
-	})
+
+	models.ConnectDataBase()
+
+	r.GET("/books",controller.FindBooks)
+	r.POST("/books",controller.CreateBook)
 
 	r.Run()
 
-	fmt.Println()
+
+
 }
