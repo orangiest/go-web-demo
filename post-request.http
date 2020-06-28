@@ -9,3 +9,17 @@ Content-Type: application/json
 
 ### test2
 GET http://localhost:8080/books
+
+###
+GET http://localhost:8080/books/40
+
+###
+PATCH http://localhost:8080/books/1
+Content-Type: application/json
+
+{
+"title": "Test PUT update"
+}
+
+###
+DELETE http://localhost:8080/books/1
