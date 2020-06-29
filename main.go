@@ -11,11 +11,14 @@ import (
 // 希望实现的功能
 // 1. 可自由配置的端口 doc 表示需要使用 环境变量
 // 2. 单独文件的路由配置 已实现在 router 中
+var (
+	configFile = flag.String("c", "", "Configuration File name")
+)
 
 func main() {
-	configFile := flag.String("c", "", "Configuration File name")
+
 	flag.Parse()
-	fmt.Println("filename: ", *configFile)
+
 	// load configuration file./
 	err := config.InitConfig(*configFile)
 	if err != nil {

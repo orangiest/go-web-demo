@@ -8,7 +8,8 @@ Content-Type: application/json
 }
 
 ### test2
-GET http://localhost:8080/books
+GET http://localhost:9875/books
+Authorization: Test Authorization
 
 ###
 GET http://localhost:8080/books/40
@@ -23,3 +24,7 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8080/books/1
+
+###
+GET http://localhost:9875/login
+

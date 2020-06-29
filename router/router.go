@@ -19,6 +19,8 @@ func RegiesterGin(port string) {
 	r.PATCH("/books/:id",controller.UpdateBook)
 	r.DELETE("/books/:id",controller.DeleteBooks)
 
+	r.GET("/login",controller.Login)
+
 	r.Run(":"+port)
 
 }

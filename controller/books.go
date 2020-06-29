@@ -3,12 +3,17 @@ package controller
 import (
 	"cwm.wiki/web/mapper"
 	"cwm.wiki/web/models"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
 
 // get
 func FindBooks(c *gin.Context) {
+
+	fmt.Println(c.GetHeader("Authorization"))
+
+
 	books := mapper.SelectBooks()
 	c.JSON(http.StatusOK, gin.H{"data": books})
 }
