@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"cwm.wiki/web/mapper"
 	"cwm.wiki/web/models"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -8,9 +9,7 @@ import (
 
 // get
 func FindBooks(c *gin.Context) {
-	var books []models.Book
-	models.DB.Find(&books)
-
+	books := mapper.SelectBooks()
 	c.JSON(http.StatusOK, gin.H{"data": books})
 }
 
