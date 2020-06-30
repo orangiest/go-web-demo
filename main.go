@@ -2,6 +2,7 @@ package main
 
 import (
 	"cwm.wiki/web/config"
+	"cwm.wiki/web/models"
 	"cwm.wiki/web/router"
 	"flag"
 	"fmt"
@@ -17,6 +18,7 @@ var (
 
 func main() {
 
+	// 读取配置文件
 	flag.Parse()
 
 	// load configuration file./
@@ -34,6 +36,9 @@ func main() {
 		fmt.Printf("Default port is %s", port)
 	}
 
-	router.RegiesterGin(port)
+	models.ConnectDataBase()
+
+
+	router.RigesterGin(port)
 
 }

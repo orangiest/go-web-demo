@@ -3,13 +3,13 @@ POST http://localhost:8080/books
 Content-Type: application/json
 
 {
-"title": "Start with Why",
-"author": "Simon Sinek"
+  "title": "Start with Why",
+  "author": "Simon Sinek"
 }
 
 ### test2
 GET http://localhost:9875/books
-Authorization: Test Authorization
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTM1MDM4NTUsImlhdCI6MTU5MzUwMjY1NSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoiYWRtaW4ifQ.o8n3vcGMepSDzZQikJago5Xy0yE6GUKWTqK_i-zXYkg
 
 ###
 GET http://localhost:8080/books/40
@@ -19,12 +19,17 @@ PATCH http://localhost:8080/books/1
 Content-Type: application/json
 
 {
-"title": "Test PUT update"
+  "title": "Test PUT update"
 }
 
 ###
 DELETE http://localhost:8080/books/1
 
 ###
-GET http://localhost:9875/login
+POST http://localhost:9875/login
+Content-Type: application/json
 
+{
+  "username": "admin",
+  "password": "admin"
+}
